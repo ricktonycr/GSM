@@ -8,6 +8,8 @@ TARGET   := gsm
 INCLUDE  := -Isrc/include/
 SRC      :=                   \
    $(wildcard src/*.cc)      \
+   $(wildcard src/view/*.cc)      \
+   $(wildcard src/controller/*.cc)      \
 
 OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 

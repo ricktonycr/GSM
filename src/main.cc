@@ -15,25 +15,21 @@
  */
 
 #include <gtkmm.h>
-#include "examplewindow.h"
+#include "include/SplashController.h"
+#include "include/ManagerController.h"
 #include <iostream>
 
 Gtk::ApplicationWindow* w = nullptr;
 
 int main(int argc, char *argv[]){
-  auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+   auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+   SplashController splashController(app);
+   splashController.init();
 
-  auto refBuilder = Gtk::Builder::create();
-  try
-  {
-    refBuilder->add_from_file("src/interfaces/other.glade");
-  }
-  catch(const Glib::FileError& ex)
-  {
-    std::cerr << "FileError: " << ex.what() << std::endl;
-    return 1;
-  }
-  refBuilder->get_widget("GtkApplicationWindow", w);
-  //Shows the window and returns when it is closed.
-  return app->run(*w);
+   app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+
+   ManagerController manager(app);
+   manager.init();
+
+   std::cout << "prueba" << std::endl;
 }
