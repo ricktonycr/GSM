@@ -1,5 +1,5 @@
 CXX      := -g++
-CXXFLAGS := `pkg-config gtkmm-3.0 --cflags --libs` #-pedantic-errors -Wall -Wextra -Werror
+CXXFLAGS := `pkg-config gtkmm-3.0 --cflags --libs` `pkg-config glibmm-2.4 --cflags --libs` #-pedantic-errors -Wall -Wextra -Werror
 LDFLAGS  := 
 BUILD    := ./dist
 OBJ_DIR  := $(BUILD)/objects
@@ -8,7 +8,6 @@ TARGET   := gsm
 INCLUDE  := -Isrc/include/
 SRC      :=                   \
    $(wildcard src/*.cc)      \
-   $(wildcard src/view/*.cc)      \
    $(wildcard src/controller/*.cc)      \
 
 OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
@@ -21,7 +20,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 $(APP_DIR)/$(TARGET): $(OBJECTS)
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS)
+	$(CXX) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS) $(CXXFLAGS)
 
 .PHONY: all build clean debug release
 

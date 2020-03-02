@@ -1,0 +1,16 @@
+.backTitle{
+    background-image: none;
+    background-color: #222;
+}
+
+.title{
+    color: white;
+}
+
+.button{
+    background-image: none;
+    background-color: #222;
+    color: whitesmoke;
+    border: none;
+    box-shadow: none;
+}

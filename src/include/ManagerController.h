@@ -3,14 +3,20 @@
 
 #include <gtkmm.h>
 
-class ManagerController{
+class ManagerController {
    public:
-      ManagerController(const Glib::RefPtr<Gtk::Application>& app);
+      ManagerController(Glib::RefPtr<Gtk::Application> app);
       virtual ~ManagerController();
-      int init();
+      Gtk::ApplicationWindow* getWindow();
    private:
+      Gtk::Button* newButton;
+      Gtk::Button* exitButton;
       Gtk::ApplicationWindow* managerWindow;
-      Glib::RefPtr<Gtk::Application> application;
+      Glib::RefPtr<Gtk::Application> app;
+   protected:
+      //Signal handlers:
+      void on_button_clicked();
+      void on_exit_clicked();
 };
 
 #endif

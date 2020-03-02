@@ -15,21 +15,29 @@
  */
 
 #include <gtkmm.h>
-#include "include/SplashController.h"
+#include <gtkmm-3.0/gtkmm.h>
+#include <gtkmm/cssprovider.h>
 #include "include/ManagerController.h"
 #include <iostream>
+#include <gtkmm/cssprovider.h>
+#include <gtk/gtk.h>
 
 Gtk::ApplicationWindow* w = nullptr;
 
 int main(int argc, char *argv[]){
-   auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
-   SplashController splashController(app);
-   splashController.init();
 
-   app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+   auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+
+   std::string css_relpath = "src/view/all.css";
+   Glib::RefPtr<Gtk::CssProvider> cssProvider = Gtk::CssProvider::create();
+   cssProvider->load_from_path("src/view/all.css");
+   Glib::RefPtr<Gtk::StyleContext> styleContext = Gtk::StyleContext::create();
+
+   Glib::RefPtr<Gdk::Screen> screen = Gdk::Screen::get_default();
+   styleContext->add_provider_for_screen(screen, cssProvider, 600);
+
 
    ManagerController manager(app);
-   manager.init();
 
-   std::cout << "prueba" << std::endl;
+   return app->run(*manager.getWindow());
 }
