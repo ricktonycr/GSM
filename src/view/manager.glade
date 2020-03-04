@@ -127,7 +127,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkListBox">
+          <object class="GtkListBox" id="ProjectList">
             <property name="height_request">450</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>

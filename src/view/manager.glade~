@@ -87,7 +87,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="Salir">
                 <property name="label" translatable="yes">Salir</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
