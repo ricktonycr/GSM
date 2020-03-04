@@ -5,12 +5,19 @@
 
 .title{
     color: white;
+    font-size: 400px;
 }
 
 .button{
     background-image: none;
     background-color: #222;
-    color: whitesmoke;
+    color: rgb(221, 221, 221);
+    font-weight: 600;
     border: none;
     box-shadow: none;
+    text-shadow: none;
+}
+
+.button:hover{
+    color: rgb(128, 128, 128);
 }

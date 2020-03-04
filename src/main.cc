@@ -18,9 +18,15 @@
 #include <gtkmm-3.0/gtkmm.h>
 #include <gtkmm/cssprovider.h>
 #include "include/ManagerController.h"
-#include <iostream>
 #include <gtkmm/cssprovider.h>
 #include <gtk/gtk.h>
+#include <iostream>
+#include <fstream>
+#include "include/json/document.h"
+#include "include/json/writer.h"
+#include "include/json/stringbuffer.h"
+using namespace std;
+using namespace rapidjson;
 
 Gtk::ApplicationWindow* w = nullptr;
 
@@ -35,6 +41,45 @@ int main(int argc, char *argv[]){
 
    Glib::RefPtr<Gdk::Screen> screen = Gdk::Screen::get_default();
    styleContext->add_provider_for_screen(screen, cssProvider, 600);
+
+   // Reading the file
+   string line, all;
+   ifstream myfile ("GeneralData.gnrl");
+   if (myfile.is_open()){
+      while (getline(myfile,line))
+      {
+         all += line;
+      }
+      cout << all << endl;
+      Document d;
+      d.Parse(all.c_str());
+      Value& s = d["roleActive"];
+      cout << s.GetString() << endl;
+      myfile.close();
+   }else{
+      ofstream myfile ("GeneralData.gnrl");
+      if (myfile.is_open()){
+         Document d;
+         d.SetObject();
+         Value numberProj(0);
+         Value roleActive("RESEARCHER");
+         Value languageActive("EN");
+         Value projectIdGenerator(1);
+         d.AddMember("numberOfProjects",numberProj,d.GetAllocator());
+         d.AddMember("roleActive",roleActive,d.GetAllocator());
+         d.AddMember("languageActive",languageActive,d.GetAllocator());
+         d.AddMember("projectIdGenerator",projectIdGenerator,d.GetAllocator());
+
+         StringBuffer buffer;
+         Writer<StringBuffer> writer(buffer);
+         d.Accept(writer);
+
+         myfile << buffer.GetString();
+         myfile.close();
+      }else
+         cout << "Unable to open file";
+   }
+   
 
 
    ManagerController manager(app);
