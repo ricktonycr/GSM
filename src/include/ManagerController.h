@@ -9,21 +9,22 @@ class ManagerController {
       ManagerController(Glib::RefPtr<Gtk::Application> app);
       virtual ~ManagerController();
       Gtk::ApplicationWindow* getWindow();
+      int projectIdGenerator;
+      vector<string> projectNames;
+      vector<string> profileNames;
+      Gtk::ApplicationWindow* managerWindow;
+      void refreshProjects();
    private:
       Gtk::Button* newButton;
       Gtk::Button* exitButton;
       Gtk::ListBox* projectList;
-      Gtk::ApplicationWindow* managerWindow;
       Glib::RefPtr<Gtk::Application> app;
       int numberOfProjects;
       string roleActive;
       string languageActive;
-      int projectIdGenerator;
-      vector<string> projectNames;
-      vector<string> projectPaths;
       void readDocument();
       void saveDocument();
-      void selected(Glib::ustring path);
+      void selected(Gtk::ListBoxRow* lista, Glib::ustring path);
    protected:
       //Signal handlers:
       void on_button_clicked();

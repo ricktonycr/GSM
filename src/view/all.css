@@ -5,7 +5,13 @@
 
 .title{
     color: white;
-    font-size: 400px;
+    font-size: 30px;
+}
+
+
+.titl{
+    color: rgb(44, 44, 44);
+    font-size: 15px;
 }
 
 .button{
@@ -16,8 +22,14 @@
     border: none;
     box-shadow: none;
     text-shadow: none;
+    text-decoration: underline;
 }
 
 .button:hover{
     color: rgb(128, 128, 128);
+}
+
+.NewProject{
+    background-image: none;
+    background-color: rgb(105, 105, 105);
 }

@@ -1,5 +1,6 @@
 #include "../include/ManagerController.h"
 #include "../include/NewProjectController.h"
+#include "../include/ImagesController.h"
 #include <iostream>
 #include <fstream>
 #include "../include/json/document.h"
@@ -26,25 +27,13 @@ ManagerController::ManagerController(Glib::RefPtr<Gtk::Application> app){
    ManagerController::exitButton->signal_clicked().connect( sigc::mem_fun(*this, &ManagerController::on_exit_clicked) );
 
    refBuilder->get_widget("ProjectList", ManagerController::projectList);
-   projectList->signal_row_selected().connect(sigc::bind<Glib::ustring>( sigc::mem_fun(*this, &ManagerController::selected), "projectPaths[i]"));
+   projectList->signal_row_activated().connect(sigc::bind<Glib::ustring>( sigc::mem_fun(*this, &ManagerController::selected), ""));
 
-   for(unsigned i=0; i < projectNames.size(); i++){
-      Gtk::Label *label = Gtk::manage(new Gtk::Label(projectNames[i]));
-      Gtk::Box *box = Gtk::manage(new Gtk::Box());
-      box->pack_start(*label);
-      Gtk::ListBoxRow *row = Gtk::manage(new Gtk::ListBoxRow());
-      row->add(*box);
-      row->set_size_request(100,50);
-      //row->signal_selection_received();
-      projectList->append(*row);
-   }
-   projectList->show_all_children();
-   
+   refreshProjects();
 }
 
 void ManagerController::on_button_clicked(){
-   NewProjectController newProject;
-   newProject.getWindow()->set_parent(*managerWindow);
+   NewProjectController newProject(this);
    newProject.getWindow()->run();
    
    std::cout << "The Button was clicked." << std::endl;
@@ -62,10 +51,30 @@ ManagerController::~ManagerController(){
 
 }
 
+void ManagerController::refreshProjects(){
+   int q = 0;
+   while (q<projectList->get_children().size()){
+      projectList->remove(*projectList->get_children().at(q));
+      q++;
+   }
+   
+
+   for(unsigned i=0; i < projectNames.size(); i++){
+      Gtk::Label *label = Gtk::manage(new Gtk::Label(projectNames[i]));
+      Gtk::Box *box = Gtk::manage(new Gtk::Box());
+      box->pack_start(*label);
+      Gtk::ListBoxRow *row = Gtk::manage(new Gtk::ListBoxRow());
+      row->add(*box);
+      row->set_size_request(100,50);
+      projectList->append(*row);
+   }
+   projectList->show_all_children();
+}
+
 void ManagerController::readDocument(){
    // Reading the file
    string line, all;
-   ifstream myfile ("GeneralData.gnrl");
+   ifstream myfile ("data/GeneralData.gnrl");
    if (myfile.is_open()){
       // Concat all lines
       while (getline(myfile,line)){
@@ -74,30 +83,49 @@ void ManagerController::readDocument(){
       
       // Parse JSON
       Document d;
-      d.Parse(all.c_str());
+      ParseResult ok = d.Parse(all.c_str());
 
-      // Setting global variables
-      Value& s = d["numberOfProjects"];
-      ManagerController::numberOfProjects = s.GetInt();
-      s = d["roleActive"];
-      ManagerController::roleActive = s.GetString();
-      s = d["languageActive"];
-      ManagerController::languageActive = s.GetString();
-      s = d["projectIdGenerator"];
-      ManagerController::projectIdGenerator = s.GetInt();
-      myfile.close();
+      if(!ok){
+         ManagerController::numberOfProjects = 0;
+         ManagerController::roleActive = "RESEARCHER";
+         ManagerController::languageActive = "EN";
+         ManagerController::projectIdGenerator = 1;
+      }else{
+         // Setting global variables
+         Value& s = d["numberOfProjects"];
+         ManagerController::numberOfProjects = s.GetInt();
+         s = d["roleActive"];
+         ManagerController::roleActive = s.GetString();
+         s = d["languageActive"];
+         ManagerController::languageActive = s.GetString();
+         s = d["projectIdGenerator"];
+         ManagerController::projectIdGenerator = s.GetInt();
+         s = d["projects"];
+         if(s.IsArray())
+            for (rapidjson::Value::ConstValueIterator itr = s.Begin(); itr != s.End(); ++itr) {
+               const rapidjson::Value& attribute = *itr;
+               assert(attribute.IsString()); // each attribute is an object
+               ManagerController::projectNames.push_back(attribute.GetString());
+            }
+         s = d["profiles"];
+         if(s.IsArray())
+            for (rapidjson::Value::ConstValueIterator itr = s.Begin(); itr != s.End(); ++itr) {
+               const rapidjson::Value& attribute = *itr;
+               assert(attribute.IsString()); // each attribute is an object
+               ManagerController::profileNames.push_back(attribute.GetString());
+            }
+         myfile.close();
+      }
    }else{
       ManagerController::numberOfProjects = 0;
       ManagerController::roleActive = "RESEARCHER";
       ManagerController::languageActive = "EN";
       ManagerController::projectIdGenerator = 1;
-      ManagerController::projectNames.push_back("hola");
-      ManagerController::projectPaths.push_back("./");
    }
 }
 
 void ManagerController::saveDocument(){
-   ofstream myfile ("GeneralData.gnrl", std::ios_base::app);
+   ofstream myfile ("data/GeneralData.gnrl", std::ios_base::trunc);
    if (myfile.is_open()){
       Document d;
       d.SetObject();
@@ -114,20 +142,27 @@ void ManagerController::saveDocument(){
       d.AddMember("languageActive",languageActive,d.GetAllocator());
       d.AddMember("projectIdGenerator",projectIdGenerator,d.GetAllocator());
 
-      Value a(kArrayType);
+      Value a;
+      a.SetArray();
+      
       for(unsigned i=0; i < projectNames.size(); i++){
-         Value v(kObjectType);
-         Value id;
-         Value path;
-         id.SetString(projectNames[i].c_str(),projectNames[i].length(),d.GetAllocator());
-         path.SetString(projectPaths[i].c_str(),projectPaths[i].length(),d.GetAllocator());
-         v.AddMember("name",id,d.GetAllocator());
-         v.AddMember("path",path,d.GetAllocator());
-         a.PushBack(v,d.GetAllocator());
+         Value name;
+         name.SetString(projectNames[i].c_str(),projectNames[i].length(),d.GetAllocator());
+         a.PushBack(name,d.GetAllocator());
       }
 
       d.AddMember("projects",a,d.GetAllocator());
       
+      a.SetArray();
+      a.Clear();
+      
+      for(unsigned i=0; i < profileNames.size(); i++){
+         Value name;
+         name.SetString(profileNames[i].c_str(),profileNames[i].length(),d.GetAllocator());
+         a.PushBack(name,d.GetAllocator());
+      }
+
+      d.AddMember("profiles",a,d.GetAllocator());
 
       StringBuffer buffer;
       Writer<StringBuffer> writer(buffer);
@@ -139,6 +174,11 @@ void ManagerController::saveDocument(){
       cout << "Unable to write file";
 }
 
-void ManagerController::selected(Glib::ustring path){
-   cout << path << endl;
+void ManagerController::selected(Gtk::ListBoxRow* lista, Glib::ustring path){
+   Gtk::Label* l = (Gtk::Label*)((Gtk::Box*)lista->get_child())->get_children()[0];
+   ImagesController* images = new ImagesController("");
+   app->add_window(*images->imagesWindow);
+   managerWindow->hide();
+
+   //getWindow()->hide();
 }
