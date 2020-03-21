@@ -36,7 +36,6 @@ void ManagerController::on_button_clicked(){
    NewProjectController newProject(this);
    newProject.getWindow()->run();
    
-   std::cout << "The Button was clicked." << std::endl;
 }
 
 void ManagerController::on_exit_clicked(){
@@ -52,12 +51,11 @@ ManagerController::~ManagerController(){
 }
 
 void ManagerController::refreshProjects(){
-   int q = 0;
-   while (q<projectList->get_children().size()){
-      projectList->remove(*projectList->get_children().at(q));
-      q++;
+   int q = projectList->get_children().size();
+   while (--q >= 0){
+      Gtk::Widget* b = (Gtk::Widget*)projectList->get_children().at(q);
+      projectList->remove(*b);
    }
-   
 
    for(unsigned i=0; i < projectNames.size(); i++){
       Gtk::Label *label = Gtk::manage(new Gtk::Label(projectNames[i]));
@@ -176,7 +174,7 @@ void ManagerController::saveDocument(){
 
 void ManagerController::selected(Gtk::ListBoxRow* lista, Glib::ustring path){
    Gtk::Label* l = (Gtk::Label*)((Gtk::Box*)lista->get_child())->get_children()[0];
-   ImagesController* images = new ImagesController("");
+   ImagesController* images = new ImagesController(l->get_text(),app);
    app->add_window(*images->imagesWindow);
    managerWindow->hide();
 

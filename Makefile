@@ -9,6 +9,7 @@ INCLUDE  := -Isrc/include/
 SRC      :=                   \
    $(wildcard src/*.cc)      \
    $(wildcard src/controller/*.cc)      \
+   $(wildcard src/model/*.cc)      \
 
 OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 

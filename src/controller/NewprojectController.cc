@@ -1,4 +1,5 @@
 #include "../include/NewProjectController.h"
+#include "../include/NewProfileController.h"
 #include <iostream>
 #include "../include/json/document.h"
 #include "../include/json/writer.h"
@@ -19,6 +20,7 @@ NewProjectController::NewProjectController(ManagerController* manager){
       std::cerr << "FileError: " << ex.what() << std::endl;
    }
    refBuilder->get_widget("GtkDialog", NewProjectController::managerWindow);
+   managerWindow->set_transient_for(*mc->getWindow());
    refBuilder->get_widget("Cancelar", NewProjectController::cancelButton);
    refBuilder->get_widget("Aceptar", NewProjectController::aceptButton);
    refBuilder->get_widget("Nombre", NewProjectController::entry);
@@ -26,10 +28,15 @@ NewProjectController::NewProjectController(ManagerController* manager){
    refBuilder->get_widget("newProfile", NewProjectController::newProfile);
    NewProjectController::cancelButton->signal_clicked().connect( sigc::mem_fun(*this, &NewProjectController::on_cancel_clicked) );
    NewProjectController::aceptButton->signal_clicked().connect( sigc::mem_fun(*this, &NewProjectController::on_acept_clicked) );
+   NewProjectController::newProfile->signal_clicked().connect( sigc::mem_fun(*this, &NewProjectController::on_newProfile_clicked) );
    managerWindow->show_all_children();
 
-   Gtk::Label *label = Gtk::manage(new Gtk::Label("hey"));
+   refreshCombo();
+}
+
+void NewProjectController::refreshCombo(){
    int i = 0;
+   combo->remove_all();
    while(i<profileNames->size()){
       combo->append(profileNames->at(i));
       i++;
@@ -96,5 +103,7 @@ NewProjectController::~NewProjectController(){
 }
 
 void NewProjectController::on_newProfile_clicked(){
-   managerWindow->hide();
+   //managerWindow->hide();
+   NewProfileController prfCtr(mc, this);
+   prfCtr.getWindow()->run();
 }
