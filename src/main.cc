@@ -24,9 +24,16 @@
 #include <fstream>
 using namespace std;
 
+#include <unistd.h>
+#include <stdio.h>
+
 Gtk::ApplicationWindow* w = nullptr;
 
 int main(int argc, char *argv[]){
+   char cwd[1024];
+    chdir("/path/to/change/directory/to");
+    getcwd(cwd, sizeof(cwd));
+    printf("Current working dir: %s\n", cwd);
 
    auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
 

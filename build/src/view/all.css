@@ -1,0 +1,35 @@
+.backTitle{
+    background-image: none;
+    background-color: #222;
+}
+
+.title{
+    color: white;
+    font-size: 30px;
+}
+
+
+.titl{
+    color: rgb(44, 44, 44);
+    font-size: 15px;
+}
+
+.button{
+    background-image: none;
+    background-color: #222;
+    color: rgb(221, 221, 221);
+    font-weight: 600;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration: underline;
+}
+
+.button:hover{
+    color: rgb(128, 128, 128);
+}
+
+.NewProject{
+    background-image: none;
+    background-color: rgb(105, 105, 105);
+}

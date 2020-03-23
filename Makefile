@@ -1,5 +1,5 @@
 CXX      := -g++
-CXXFLAGS := `pkg-config gtkmm-3.0 --cflags --libs` `pkg-config glibmm-2.4 --cflags --libs` #-pedantic-errors -Wall -Wextra -Werror
+CXXFLAGS := `pkg-config gtkmm-3.0 --cflags --libs` `pkg-config glibmm-2.4 --cflags --libs` #-lpthread  #-pedantic-errors -Wall -Wextra -Werror
 LDFLAGS  := 
 BUILD    := ./dist
 OBJ_DIR  := $(BUILD)/objects
