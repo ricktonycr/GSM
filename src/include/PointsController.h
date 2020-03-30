@@ -14,7 +14,6 @@ class PointsController{
         PointsController(int idProject, int id);
         virtual ~PointsController();
         Gtk::ApplicationWindow* pointsWindow;
-    private:
         int idProject;
         Gtk::GLArea* canvas;
         Gtk::Toolbar* toolbar;
@@ -24,10 +23,9 @@ class PointsController{
         void init_buffers();
         void init_shaders();
         bool render(const Glib::RefPtr<Gdk::GLContext>&);
-        protected: GLuint m_Vao {0};
+        GLuint m_Vao {0};
         GLuint m_Program {0};
         GLuint m_Buffer {0};
-        GLfloat* vertex_data;
         void actions_handler();
         GLuint create_shader(int type, const char *src);
         GLuint m_Mvp {0};

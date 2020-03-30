@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/glarea">
-    <file>glarea-fragment.glsl</file>
-    <file>glarea-vertex.glsl</file>
+    <file>src/resources/glarea-fragment.glsl</file>
+    <file>src/resources/glarea-vertex.glsl</file>
   </gresource>
 </gresources>

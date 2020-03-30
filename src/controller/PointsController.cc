@@ -12,16 +12,15 @@ enum {
    N_AXIS
 };
 
+static const GLfloat vertex_data[] = {
+  0.f,   0.5f,   0.f, 1.f,
+  0.5f, -0.366f, 0.f, 1.f,
+ -0.5f, -0.366f, 0.f, 1.f,
+};
+
 PointsController::PointsController(int idProject, int id):m_RotationAngles(N_AXIS, 0.0f){
    PointsController::idProject = idProject;
    PointsController::id = id;
-   GLfloat v[] = {
-      0.f,   0.5f,   0.f, 1.f,
-      0.5f, -0.366f, 0.f, 1.f,
-      -0.5f, -0.366f, 0.f, 1.f,
-   };
-
-   vertex_data = v;
    auto refBuilder = Gtk::Builder::create();
    try{
       refBuilder->add_from_file("../src/view/points.glade");
@@ -80,6 +79,7 @@ void PointsController::unrealize(){
    canvas->make_current();
    try{
       canvas->throw_if_error();
+   canvas->make_current();
       // Delete buffers and program
       glDeleteBuffers(1, &m_Vao);
       glDeleteProgram(m_Program);
@@ -91,11 +91,10 @@ void PointsController::unrealize(){
 
 bool PointsController::render(const Glib::RefPtr<Gdk::GLContext>&){
    cout << "render" << endl;
-   toolbar->queue_draw();
+   //toolbar->queue_draw();
    try{
       cout << "antes de " << endl;
-      m_RotationAngles[0] = m_RotationAngles[0] + 0.02;
-      //canvas->throw_if_error();
+      canvas->throw_if_error();
       glClearColor(0.5, 0.5, 0.5, 1.0);
       glClear(GL_COLOR_BUFFER_BIT);
       draw_triangle();
