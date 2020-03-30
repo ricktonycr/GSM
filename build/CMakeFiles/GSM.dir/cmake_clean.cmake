@@ -6,11 +6,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o"
   "CMakeFiles/GSM.dir/src/controller/PointsController.cc.o"
   "CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
+  "CMakeFiles/GSM.dir/src/resources/resources.c.o"
   "GSM.pdb"
   "GSM"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/GSM.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

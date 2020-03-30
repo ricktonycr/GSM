@@ -17,6 +17,7 @@ class PointsController{
     private:
         int idProject;
         Gtk::GLArea* canvas;
+        Gtk::Toolbar* toolbar;
         int id;
         void realize();
         void unrealize();
@@ -27,6 +28,12 @@ class PointsController{
         GLuint m_Program {0};
         GLuint m_Buffer {0};
         GLfloat* vertex_data;
+        void actions_handler();
+        GLuint create_shader(int type, const char *src);
+        GLuint m_Mvp {0};
+        void draw_triangle();
+        void compute_mvp(float *res,float phi,float theta,float psi);
+        std::vector<float> m_RotationAngles;
 };
 
 #endif

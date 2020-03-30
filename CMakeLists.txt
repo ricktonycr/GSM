@@ -33,6 +33,7 @@ add_executable(GSM
     src/controller/NewprojectController.cc
     src/controller/PointsController.cc
     src/model/ImageResume.cc
+    src/resources/resources.c
     src/include/ImageResume.h
     src/include/ImagesController.h
     src/include/ManagerController.h

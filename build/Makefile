@@ -358,6 +358,33 @@ src/model/ImageResume.cc.s:
 	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/model/ImageResume.cc.s
 .PHONY : src/model/ImageResume.cc.s
 
+src/resources/resources.o: src/resources/resources.c.o
+
+.PHONY : src/resources/resources.o
+
+# target to build an object file
+src/resources/resources.c.o:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/resources/resources.c.o
+.PHONY : src/resources/resources.c.o
+
+src/resources/resources.i: src/resources/resources.c.i
+
+.PHONY : src/resources/resources.i
+
+# target to preprocess a source file
+src/resources/resources.c.i:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/resources/resources.c.i
+.PHONY : src/resources/resources.c.i
+
+src/resources/resources.s: src/resources/resources.c.s
+
+.PHONY : src/resources/resources.s
+
+# target to generate assembly for a file
+src/resources/resources.c.s:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/resources/resources.c.s
+.PHONY : src/resources/resources.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -392,6 +419,9 @@ help:
 	@echo "... src/model/ImageResume.o"
 	@echo "... src/model/ImageResume.i"
 	@echo "... src/model/ImageResume.s"
+	@echo "... src/resources/resources.o"
+	@echo "... src/resources/resources.i"
+	@echo "... src/resources/resources.s"
 .PHONY : help
 
 

@@ -260,6 +260,6 @@ void ImagesController::on_edit_clicked(){
       
       PointsController* images = new PointsController(id,imId);
       app->add_window(*images->pointsWindow);
-      imagesWindow->hide();
+      //imagesWindow->hide();
    }
 }

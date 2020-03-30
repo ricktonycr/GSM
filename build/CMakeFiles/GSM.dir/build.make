@@ -60,15 +60,15 @@ include CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/main.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/main.cc.o: ../src/main.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GSM.dir/src/main.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/main.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/main.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/main.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/main.cc
 
 CMakeFiles/GSM.dir/src/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/main.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/main.cc > CMakeFiles/GSM.dir/src/main.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/main.cc > CMakeFiles/GSM.dir/src/main.cc.i
 
 CMakeFiles/GSM.dir/src/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/main.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/main.cc -o CMakeFiles/GSM.dir/src/main.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/main.cc -o CMakeFiles/GSM.dir/src/main.cc.s
 
 CMakeFiles/GSM.dir/src/main.cc.o.requires:
 
@@ -84,15 +84,15 @@ CMakeFiles/GSM.dir/src/main.cc.o.provides.build: CMakeFiles/GSM.dir/src/main.cc.
 CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o: ../src/controller/ImagesController.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc
 
 CMakeFiles/GSM.dir/src/controller/ImagesController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/ImagesController.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc > CMakeFiles/GSM.dir/src/controller/ImagesController.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc > CMakeFiles/GSM.dir/src/controller/ImagesController.cc.i
 
 CMakeFiles/GSM.dir/src/controller/ImagesController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/ImagesController.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc -o CMakeFiles/GSM.dir/src/controller/ImagesController.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/ImagesController.cc -o CMakeFiles/GSM.dir/src/controller/ImagesController.cc.s
 
 CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o.requires:
 
@@ -108,15 +108,15 @@ CMakeFiles/GSM.dir/src/controller/ImagesController.cc.o.provides.build: CMakeFil
 CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o: ../src/controller/ManagerController.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc
 
 CMakeFiles/GSM.dir/src/controller/ManagerController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/ManagerController.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc > CMakeFiles/GSM.dir/src/controller/ManagerController.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc > CMakeFiles/GSM.dir/src/controller/ManagerController.cc.i
 
 CMakeFiles/GSM.dir/src/controller/ManagerController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/ManagerController.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc -o CMakeFiles/GSM.dir/src/controller/ManagerController.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/ManagerController.cc -o CMakeFiles/GSM.dir/src/controller/ManagerController.cc.s
 
 CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o.requires:
 
@@ -132,15 +132,15 @@ CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o.provides.build: CMakeFi
 CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o: ../src/controller/NewProfileController.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc
 
 CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc > CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc > CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.i
 
 CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc -o CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/NewProfileController.cc -o CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.s
 
 CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o.requires:
 
@@ -156,15 +156,15 @@ CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o.provides.build: CMak
 CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o: ../src/controller/NewprojectController.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc
 
 CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc > CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc > CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.i
 
 CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc -o CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/NewprojectController.cc -o CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.s
 
 CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o.requires:
 
@@ -180,15 +180,15 @@ CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o.provides.build: CMak
 CMakeFiles/GSM.dir/src/controller/PointsController.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/controller/PointsController.cc.o: ../src/controller/PointsController.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GSM.dir/src/controller/PointsController.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/PointsController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/PointsController.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc
 
 CMakeFiles/GSM.dir/src/controller/PointsController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/PointsController.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc > CMakeFiles/GSM.dir/src/controller/PointsController.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc > CMakeFiles/GSM.dir/src/controller/PointsController.cc.i
 
 CMakeFiles/GSM.dir/src/controller/PointsController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/PointsController.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc -o CMakeFiles/GSM.dir/src/controller/PointsController.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/controller/PointsController.cc -o CMakeFiles/GSM.dir/src/controller/PointsController.cc.s
 
 CMakeFiles/GSM.dir/src/controller/PointsController.cc.o.requires:
 
@@ -204,15 +204,15 @@ CMakeFiles/GSM.dir/src/controller/PointsController.cc.o.provides.build: CMakeFil
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o: ../src/model/ImageResume.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/model/ImageResume.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/model/ImageResume.cc.o -c /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc
 
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/model/ImageResume.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc > CMakeFiles/GSM.dir/src/model/ImageResume.cc.i
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc > CMakeFiles/GSM.dir/src/model/ImageResume.cc.i
 
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/model/ImageResume.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc -o CMakeFiles/GSM.dir/src/model/ImageResume.cc.s
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/model/ImageResume.cc -o CMakeFiles/GSM.dir/src/model/ImageResume.cc.s
 
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o.requires:
 
@@ -225,6 +225,30 @@ CMakeFiles/GSM.dir/src/model/ImageResume.cc.o.provides: CMakeFiles/GSM.dir/src/m
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o.provides.build: CMakeFiles/GSM.dir/src/model/ImageResume.cc.o
 
 
+CMakeFiles/GSM.dir/src/resources/resources.c.o: CMakeFiles/GSM.dir/flags.make
+CMakeFiles/GSM.dir/src/resources/resources.c.o: ../src/resources/resources.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/GSM.dir/src/resources/resources.c.o"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GSM.dir/src/resources/resources.c.o   -c /home/rcruz/workspace/cpp/GSM++/src/resources/resources.c
+
+CMakeFiles/GSM.dir/src/resources/resources.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GSM.dir/src/resources/resources.c.i"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/rcruz/workspace/cpp/GSM++/src/resources/resources.c > CMakeFiles/GSM.dir/src/resources/resources.c.i
+
+CMakeFiles/GSM.dir/src/resources/resources.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GSM.dir/src/resources/resources.c.s"
+	/usr/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/rcruz/workspace/cpp/GSM++/src/resources/resources.c -o CMakeFiles/GSM.dir/src/resources/resources.c.s
+
+CMakeFiles/GSM.dir/src/resources/resources.c.o.requires:
+
+.PHONY : CMakeFiles/GSM.dir/src/resources/resources.c.o.requires
+
+CMakeFiles/GSM.dir/src/resources/resources.c.o.provides: CMakeFiles/GSM.dir/src/resources/resources.c.o.requires
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/resources/resources.c.o.provides.build
+.PHONY : CMakeFiles/GSM.dir/src/resources/resources.c.o.provides
+
+CMakeFiles/GSM.dir/src/resources/resources.c.o.provides.build: CMakeFiles/GSM.dir/src/resources/resources.c.o
+
+
 # Object files for target GSM
 GSM_OBJECTS = \
 "CMakeFiles/GSM.dir/src/main.cc.o" \
@@ -233,7 +257,8 @@ GSM_OBJECTS = \
 "CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o" \
 "CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o" \
 "CMakeFiles/GSM.dir/src/controller/PointsController.cc.o" \
-"CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
+"CMakeFiles/GSM.dir/src/model/ImageResume.cc.o" \
+"CMakeFiles/GSM.dir/src/resources/resources.c.o"
 
 # External object files for target GSM
 GSM_EXTERNAL_OBJECTS =
@@ -245,12 +270,13 @@ GSM: CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o
 GSM: CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o
 GSM: CMakeFiles/GSM.dir/src/controller/PointsController.cc.o
 GSM: CMakeFiles/GSM.dir/src/model/ImageResume.cc.o
+GSM: CMakeFiles/GSM.dir/src/resources/resources.c.o
 GSM: CMakeFiles/GSM.dir/build.make
 GSM: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 GSM: /usr/lib/x86_64-linux-gnu/libEGL.so
 GSM: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 GSM: CMakeFiles/GSM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable GSM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rcruz/workspace/cpp/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable GSM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GSM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -265,6 +291,7 @@ CMakeFiles/GSM.dir/requires: CMakeFiles/GSM.dir/src/controller/NewProfileControl
 CMakeFiles/GSM.dir/requires: CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o.requires
 CMakeFiles/GSM.dir/requires: CMakeFiles/GSM.dir/src/controller/PointsController.cc.o.requires
 CMakeFiles/GSM.dir/requires: CMakeFiles/GSM.dir/src/model/ImageResume.cc.o.requires
+CMakeFiles/GSM.dir/requires: CMakeFiles/GSM.dir/src/resources/resources.c.o.requires
 
 .PHONY : CMakeFiles/GSM.dir/requires
 
