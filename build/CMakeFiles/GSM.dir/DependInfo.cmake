@@ -56,6 +56,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rcruzr/workspace/citesoft/GSM++/src/controller/NewProfileController.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o"
   "/home/rcruzr/workspace/citesoft/GSM++/src/controller/NewprojectController.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o"
   "/home/rcruzr/workspace/citesoft/GSM++/src/controller/PointsController.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/controller/PointsController.cc.o"
+  "/home/rcruzr/workspace/citesoft/GSM++/src/controller/glarea.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/controller/glarea.cc.o"
   "/home/rcruzr/workspace/citesoft/GSM++/src/main.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/main.cc.o"
   "/home/rcruzr/workspace/citesoft/GSM++/src/model/ImageResume.cc" "/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
   )

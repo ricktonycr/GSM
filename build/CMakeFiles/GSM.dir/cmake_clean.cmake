@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o"
   "CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o"
   "CMakeFiles/GSM.dir/src/controller/PointsController.cc.o"
+  "CMakeFiles/GSM.dir/src/controller/glarea.cc.o"
   "CMakeFiles/GSM.dir/src/main.cc.o"
   "CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
   "CMakeFiles/GSM.dir/src/resources/resources.c.o"

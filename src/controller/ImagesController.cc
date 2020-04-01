@@ -11,6 +11,8 @@ using namespace std;
 using namespace rapidjson;
 //using namespace std;
 
+Gtk::Window* do_glarea();
+
 ImagesController::ImagesController(string path,Glib::RefPtr<Gtk::Application> app){
    completePath = "data/projects/" + path + ".gsmpj";
    ImagesController::app = app;
@@ -260,6 +262,8 @@ void ImagesController::on_edit_clicked(){
       
       PointsController* images = new PointsController(id,imId);
       app->add_window(*images->pointsWindow);
-      //imagesWindow->hide();
+      // Gtk::Window* w = do_glarea();
+      // app->add_window(*w);
+      // imagesWindow->hide();
    }
 }

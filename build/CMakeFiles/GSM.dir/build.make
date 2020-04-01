@@ -135,9 +135,22 @@ CMakeFiles/GSM.dir/src/controller/PointsController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/PointsController.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruzr/workspace/citesoft/GSM++/src/controller/PointsController.cc -o CMakeFiles/GSM.dir/src/controller/PointsController.cc.s
 
+CMakeFiles/GSM.dir/src/controller/glarea.cc.o: CMakeFiles/GSM.dir/flags.make
+CMakeFiles/GSM.dir/src/controller/glarea.cc.o: ../src/controller/glarea.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GSM.dir/src/controller/glarea.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/controller/glarea.cc.o -c /home/rcruzr/workspace/citesoft/GSM++/src/controller/glarea.cc
+
+CMakeFiles/GSM.dir/src/controller/glarea.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GSM.dir/src/controller/glarea.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rcruzr/workspace/citesoft/GSM++/src/controller/glarea.cc > CMakeFiles/GSM.dir/src/controller/glarea.cc.i
+
+CMakeFiles/GSM.dir/src/controller/glarea.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GSM.dir/src/controller/glarea.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rcruzr/workspace/citesoft/GSM++/src/controller/glarea.cc -o CMakeFiles/GSM.dir/src/controller/glarea.cc.s
+
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.o: ../src/model/ImageResume.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GSM.dir/src/model/ImageResume.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GSM.dir/src/model/ImageResume.cc.o -c /home/rcruzr/workspace/citesoft/GSM++/src/model/ImageResume.cc
 
 CMakeFiles/GSM.dir/src/model/ImageResume.cc.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/GSM.dir/src/model/ImageResume.cc.s: cmake_force
 
 CMakeFiles/GSM.dir/src/resources/resources.c.o: CMakeFiles/GSM.dir/flags.make
 CMakeFiles/GSM.dir/src/resources/resources.c.o: ../src/resources/resources.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/GSM.dir/src/resources/resources.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/GSM.dir/src/resources/resources.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GSM.dir/src/resources/resources.c.o   -c /home/rcruzr/workspace/citesoft/GSM++/src/resources/resources.c
 
 CMakeFiles/GSM.dir/src/resources/resources.c.i: cmake_force
@@ -169,6 +182,7 @@ GSM_OBJECTS = \
 "CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o" \
 "CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o" \
 "CMakeFiles/GSM.dir/src/controller/PointsController.cc.o" \
+"CMakeFiles/GSM.dir/src/controller/glarea.cc.o" \
 "CMakeFiles/GSM.dir/src/model/ImageResume.cc.o" \
 "CMakeFiles/GSM.dir/src/resources/resources.c.o"
 
@@ -181,6 +195,7 @@ GSM: CMakeFiles/GSM.dir/src/controller/ManagerController.cc.o
 GSM: CMakeFiles/GSM.dir/src/controller/NewProfileController.cc.o
 GSM: CMakeFiles/GSM.dir/src/controller/NewprojectController.cc.o
 GSM: CMakeFiles/GSM.dir/src/controller/PointsController.cc.o
+GSM: CMakeFiles/GSM.dir/src/controller/glarea.cc.o
 GSM: CMakeFiles/GSM.dir/src/model/ImageResume.cc.o
 GSM: CMakeFiles/GSM.dir/src/resources/resources.c.o
 GSM: CMakeFiles/GSM.dir/build.make
@@ -188,7 +203,7 @@ GSM: /usr/lib/libOpenGL.so
 GSM: /usr/lib/libEGL.so
 GSM: /usr/lib/libOpenGL.so
 GSM: CMakeFiles/GSM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable GSM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rcruzr/workspace/citesoft/GSM++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GSM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GSM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

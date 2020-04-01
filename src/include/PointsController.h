@@ -13,9 +13,9 @@ class PointsController{
     public:
         PointsController(int idProject, int id);
         virtual ~PointsController();
-        Gtk::ApplicationWindow* pointsWindow;
+        Gtk::Window* pointsWindow;
         int idProject;
-        Gtk::GLArea* canvas;
+        Gtk::GLArea canvas;
         Gtk::Toolbar* toolbar;
         int id;
         void realize();
@@ -32,6 +32,7 @@ class PointsController{
         void draw_triangle();
         void compute_mvp(float *res,float phi,float theta,float psi);
         std::vector<float> m_RotationAngles;
+        Gtk::Box* box;
 };
 
 #endif

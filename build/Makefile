@@ -304,6 +304,33 @@ src/controller/PointsController.cc.s:
 	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/controller/PointsController.cc.s
 .PHONY : src/controller/PointsController.cc.s
 
+src/controller/glarea.o: src/controller/glarea.cc.o
+
+.PHONY : src/controller/glarea.o
+
+# target to build an object file
+src/controller/glarea.cc.o:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/controller/glarea.cc.o
+.PHONY : src/controller/glarea.cc.o
+
+src/controller/glarea.i: src/controller/glarea.cc.i
+
+.PHONY : src/controller/glarea.i
+
+# target to preprocess a source file
+src/controller/glarea.cc.i:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/controller/glarea.cc.i
+.PHONY : src/controller/glarea.cc.i
+
+src/controller/glarea.s: src/controller/glarea.cc.s
+
+.PHONY : src/controller/glarea.s
+
+# target to generate assembly for a file
+src/controller/glarea.cc.s:
+	$(MAKE) -f CMakeFiles/GSM.dir/build.make CMakeFiles/GSM.dir/src/controller/glarea.cc.s
+.PHONY : src/controller/glarea.cc.s
+
 src/main.o: src/main.cc.o
 
 .PHONY : src/main.o
@@ -413,6 +440,9 @@ help:
 	@echo "... src/controller/PointsController.o"
 	@echo "... src/controller/PointsController.i"
 	@echo "... src/controller/PointsController.s"
+	@echo "... src/controller/glarea.o"
+	@echo "... src/controller/glarea.i"
+	@echo "... src/controller/glarea.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

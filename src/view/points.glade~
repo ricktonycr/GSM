@@ -2,26 +2,16 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkApplicationWindow" id="Points">
-    <property name="width_request">900</property>
-    <property name="visible">True</property>
+  <object class="GtkWindow" id="Points">
     <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
-    <property name="vexpand">True</property>
-    <child type="titlebar">
-      <placeholder/>
-    </child>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
           <object class="GtkToolbar" id="toolbar">
-            <property name="width_request">30</property>
-            <property name="height_request">600</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -30,11 +20,13 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGLArea" id="Canvas">
+          <object class="GtkBox" id="box">
             <property name="visible">True</property>
-            <property name="app_paintable">True</property>
             <property name="can_focus">False</property>
-            <property name="auto_render">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <placeholder/>
+            </child>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -44,7 +36,6 @@
         </child>
         <child>
           <object class="GtkBox">
-            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>

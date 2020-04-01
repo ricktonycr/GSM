@@ -30,10 +30,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGLArea" id="Canvas">
+          <object class="GtkBox" id="box">
             <property name="visible">True</property>
-            <property name="app_paintable">True</property>
             <property name="can_focus">False</property>
+            <child>
+              <placeholder/>
+            </child>
           </object>
           <packing>
             <property name="expand">True</property>
