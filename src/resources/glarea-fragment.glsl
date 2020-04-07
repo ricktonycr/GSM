@@ -1,5 +1,10 @@
 #version 330 core
-out vec3 color;
+out vec4 color;
 void main(){
-  color = vec3(1,0,0);
+  vec2 circCoord = 2.0 * gl_PointCoord - 1.0;
+  // if (dot(circCoord, circCoord) > 1.0) {
+  //     discard;
+  // }else{
+    color = mix(vec4(1.0, 1.0, 1.0, 1.0), vec4(0.9, 0.9, 0.9, 0.0), smoothstep(0.68, 1.0, dot(circCoord, circCoord)));
+  // }
 }

@@ -12,10 +12,11 @@ enum {
    N_AXIS
 };
 
-static const GLfloat vertex_data[] = {
+GLfloat vertex_data[] = {
   0.f,   0.5f,   0.f, 1.f,
   0.5f, -0.366f, 0.f, 1.f,
  -0.5f, -0.366f, 0.f, 1.f,
+  0.f,   0.5f,   0.f, 1.f,
 };
 
 Gtk::Window* do_glarea();
@@ -48,14 +49,14 @@ PointsController::PointsController(int idProject, int id):m_RotationAngles(N_AXI
    canvas.signal_render().connect(sigc::mem_fun(*this, &PointsController::render));
    toolbar->set_toolbar_style(Gtk::TOOLBAR_ICONS);
   
-   Glib::RefPtr<Gtk::Action> act = Gtk::Action::create("new", Gtk::Stock::NEW, "", "Create New Window");
+   Glib::RefPtr<Gtk::Action> act =  Gtk::Action::create("new", Gtk::Stock::EDIT, "", "Create New Window");
    Glib::RefPtr< Gtk::ActionGroup > actGrp = Gtk::ActionGroup::create ("MainGroup");
    actGrp->add (act, Gtk::AccelKey ("<control>N"), sigc::mem_fun(*this, &PointsController::actions_handler));
    Gtk::ToolItem* item = act->create_tool_item ();
    item->set_tooltip_text("Create New Window" );
    item->set_expand (false);
    item->set_homogeneous (false);
-   item->set_size_request(20,20);
+   item->set_size_request(15,15);
    toolbar->append(*item);
    toolbar->show_all();
    pointsWindow->show_all();
@@ -72,6 +73,7 @@ void PointsController::realize(){
     canvas.throw_if_error();
     init_buffers();
     init_shaders();
+    glEnable(GL_PROGRAM_POINT_SIZE);
   }
   catch(const Gdk::GLError& gle)
   {
@@ -86,7 +88,7 @@ void PointsController::unrealize(){
   try
   {
     canvas.throw_if_error();
-
+    
     // Delete buffers and program
     glDeleteBuffers(1, &m_Vao);
     glDeleteProgram(m_Program);
@@ -99,11 +101,12 @@ void PointsController::unrealize(){
 }
 
 bool PointsController::render(const Glib::RefPtr<Gdk::GLContext>&){
-   cout << "render" << endl;
+  pointsWindow->queue_draw();
   try
   {
+    m_RotationAngles.at(0) = m_RotationAngles.at(0) + 0.2;
     canvas.throw_if_error();
-    glClearColor(0.5, 0.5, 0.5, 1.0);
+    glClearColor(0.0, 0.6, 0.5, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
 
     draw_triangle();
@@ -236,7 +239,6 @@ GLuint PointsController::create_shader(int type, const char *src){
 }
 
 void PointsController::draw_triangle(){
-   cout << "draw triangle" << endl;
   float mvp[16];
 
   compute_mvp(mvp,
@@ -251,16 +253,18 @@ void PointsController::draw_triangle(){
   glBindBuffer(GL_ARRAY_BUFFER, m_Vao);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, nullptr);
+glEnable (GL_BLEND);
+    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glDrawArrays(GL_POINTS, 0, 4);
 
-  glDrawArrays(GL_TRIANGLES, 0, 3);
-
+    glBlendFunc (GL_ONE, GL_ZERO);
+    glDisable (GL_BLEND);
   glDisableVertexAttribArray(0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glUseProgram(0);
 }
 
 void PointsController::compute_mvp(float *res, float phi, float theta, float psi){
-   cout << "compute mvp" << endl;
   float x       {phi * ((float)G_PI / 180.f)};
   float y       {theta * ((float)G_PI / 180.f)};
   float z       {psi * ((float)G_PI / 180.f)};
