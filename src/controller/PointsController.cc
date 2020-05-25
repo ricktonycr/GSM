@@ -16,7 +16,6 @@ GLfloat vertex_data[] = {
   0.f,   0.5f,   0.f, 1.f,
   0.5f, -0.366f, 0.f, 1.f,
  -0.5f, -0.366f, 0.f, 1.f,
-  0.f,   0.5f,   0.f, 1.f,
 };
 
 Gtk::Window* do_glarea();
@@ -41,14 +40,20 @@ PointsController::PointsController(int idProject, int id):m_RotationAngles(N_AXI
    canvas.set_vexpand(true);
    canvas.set_auto_render(true);
    box->add(canvas);
-   // canvas.set_required_version (3, 3);
    canvas.signal_realize().connect(sigc::mem_fun(*this, &PointsController::realize));
    // Important that the unrealize signal calls our handler to clean up
    // GL resources _before_ the default unrealize handler is called (the "false")
    canvas.signal_unrealize().connect(sigc::mem_fun(*this, &PointsController::unrealize), false);
    canvas.signal_render().connect(sigc::mem_fun(*this, &PointsController::render));
-   toolbar->set_toolbar_style(Gtk::TOOLBAR_ICONS);
+   canvas.add_events(Gdk::EventMask::POINTER_MOTION_MASK);
+   canvas.signal_motion_notify_event().connect(sigc::mem_fun(*this, &PointsController::motion), false);
+
+   add = (Gtk::ToggleToolButton*) toolbar->get_children().at(0);
+
+   add->set_active(true);
   
+
+   toolbar->set_toolbar_style(Gtk::TOOLBAR_ICONS);
    Glib::RefPtr<Gtk::Action> act =  Gtk::Action::create("new", Gtk::Stock::EDIT, "", "Create New Window");
    Glib::RefPtr< Gtk::ActionGroup > actGrp = Gtk::ActionGroup::create ("MainGroup");
    actGrp->add (act, Gtk::AccelKey ("<control>N"), sigc::mem_fun(*this, &PointsController::actions_handler));
@@ -66,7 +71,7 @@ PointsController::~PointsController(){
 }
 
 void PointsController::realize(){
-   cout << "realize" << endl;
+  cout << "realize" << endl;
   canvas.make_current();
   try
   {
@@ -247,7 +252,7 @@ void PointsController::draw_triangle(){
               m_RotationAngles[Z_AXIS]);
 
   glUseProgram(m_Program);
-
+ 
   glUniformMatrix4fv(m_Mvp, 1, GL_FALSE, &mvp[0]);
 
   glBindBuffer(GL_ARRAY_BUFFER, m_Vao);
@@ -297,4 +302,8 @@ void PointsController::compute_mvp(float *res, float phi, float theta, float psi
   res[1] = -s3c2; res[5] = c3c1 - s3s2s1;  res[9] = c3s1 + s3s2c1; res[13] = 0.f;
   res[2] = s2;    res[6] = -c2s1;         res[10] = c2c1;          res[14] = 0.f;
   res[3] = 0.f;   res[7] = 0.f;           res[11] = 0.f;           res[15] = 1.f;
+}
+
+bool PointsController::motion(GdkEventMotion* event){
+  cout << ".---" << endl;
 }
